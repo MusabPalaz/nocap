@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "nocap",
+  "description": "nocap: catch your AI coding agent cheating on tests",
+  "owner": {
+    "name": "Musab Palaz"
+  },
+  "plugins": [
+    {
+      "name": "nocap",
+      "source": "./",
+      "description": "Catches Claude cheating on tests: skipped tests, deleted or weakened asserts, CI made optional, and 'all tests pass' claims with no receipts.",
+      "category": "development"
+    }
+  ]
+}

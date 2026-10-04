@@ -1,0 +1,35 @@
+name: nocap
+description: Fail the PR when the change cheats on tests (skipped tests, deleted or weakened asserts, CI made optional, test-only branches).
+branding:
+  icon: shield
+  color: red
+inputs:
+  base:
+    description: Ref to compare against. Defaults to the PR base, or the previous commit on push.
+    required: false
+    default: ''
+  strict:
+    description: Also fail on SUS findings, not just CAP.
+    required: false
+    default: 'false'
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        INPUT_BASE: ${{ inputs.base }}
+        INPUT_STRICT: ${{ inputs.strict }}
+        PR_BASE: ${{ github.event.pull_request.base.sha }}
+        PUSH_BEFORE: ${{ github.event.before }}
+      run: |
+        base="$INPUT_BASE"
+        [ -z "$base" ] && base="$PR_BASE"
+        [ -z "$base" ] && base="$PUSH_BEFORE"
+        if [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ]; then base="HEAD~1"; fi
+        if ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+          echo "::error title=nocap::Base commit $base is not in this checkout. Use actions/checkout with fetch-depth: 0."
+          exit 2
+        fi
+        args=(scan --base "$base" --format github)
+        [ "$INPUT_STRICT" = "true" ] && args+=(--strict)
+        node "$GITHUB_ACTION_PATH/bin/nocap.js" "${args[@]}"

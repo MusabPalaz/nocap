@@ -1,0 +1,48 @@
+{
+  "name": "nocap",
+  "version": "0.1.0",
+  "description": "Catch your AI coding agent cheating: skipped tests, deleted asserts, swallowed errors, and \"all tests pass\" claims with no receipts.",
+  "author": "Musab Palaz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MusabPalaz/nocap.git"
+  },
+  "homepage": "https://github.com/MusabPalaz/nocap#readme",
+  "bugs": {
+    "url": "https://github.com/MusabPalaz/nocap/issues"
+  },
+  "type": "module",
+  "bin": {
+    "nocap": "bin/nocap.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    ".claude-plugin",
+    "hooks",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/patch.test.js test/rules.test.js test/receipts.test.js test/hook.test.js",
+    "bench": "node bench/run.js",
+    "demo": "node scripts/demo.js"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "claude-code",
+    "codex",
+    "cursor",
+    "reward-hacking",
+    "testing",
+    "code-review",
+    "git-hooks",
+    "agent-skills"
+  ]
+}
