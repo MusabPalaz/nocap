@@ -45,10 +45,10 @@ Claude her sorun için bir kez uyarılır. Bir şeyi senin isteğin üzerine bil
 ### Codex, Cursor, Gemini CLI, OpenCode, Copilot, Amp… (her ajan)
 
 ```bash
-npx nocap init
+npx nocap-ai init
 ```
 
-Hile içeren commit'leri engelleyen bir git **pre-commit hook'u** kurar ve ajana kuralları anlatan, işi bitti demeden önce `npx nocap` çalıştırmasını söyleyen kısa bir **AGENTS.md** bölümü ekler. Repo zaten Claude Code kullanıyorsa (`.claude/` ya da `CLAUDE.md`) Claude Code hook'larını da bağlar.
+Hile içeren commit'leri engelleyen bir git **pre-commit hook'u** kurar ve ajana kuralları anlatan, işi bitti demeden önce `npx nocap-ai` çalıştırmasını söyleyen kısa bir **AGENTS.md** bölümü ekler. Repo zaten Claude Code kullanıyorsa (`.claude/` ya da `CLAUDE.md`) Claude Code hook'larını da bağlar.
 
 ### CI: GitHub Actions
 
@@ -64,10 +64,12 @@ Bulgular pull request'te not olarak görünür. CAP kontrolü düşürür. SUS't
 ### Tek seferlik
 
 ```bash
-npx nocap                        # çalışma ağacı + takip edilmeyen dosyalar, HEAD'e göre
-npx nocap --staged               # commit etmek üzere olduğun şey
-npx nocap --base origin/main     # bu branch'teki her şey
+npx nocap-ai                     # çalışma ağacı + takip edilmeyen dosyalar, HEAD'e göre
+npx nocap-ai --staged            # commit etmek üzere olduğun şey
+npx nocap-ai --base origin/main  # bu branch'teki her şey
 ```
+
+npm paketinin adı `nocap-ai`; global kurulduğunda (`npm i -g nocap-ai`) komut sadece `nocap`.
 
 ## Neleri yakalar
 
@@ -88,7 +90,7 @@ npx nocap --base origin/main     # bu branch'teki her şey
 | CAP | `no-receipts` / `claim-contradicted` / `empty-test-run` | test çalıştırmadan, başarısız bir çalıştırmadan sonra ya da sıfır test çalışmışken "tüm testler geçiyor" demek |
 | SUS | `expectation-rewritten`, `type-suppression`, `any-cast`, `swallowed-error`, `strictness-lowered`, `stubbed-implementation`, … | bilinçli olabilir ama bakmaya değer |
 
-Tam liste için: `npx nocap rules`. Desteklenen diller: JS/TS, Python, Go, Rust, Java, Kotlin, C#, Ruby, PHP, Swift, Dart, Elixir ve CI dosyaları.
+Tam liste için: `npx nocap-ai rules`. Desteklenen diller: JS/TS, Python, Go, Rust, Java, Kotlin, C#, Ruby, PHP, Swift, Dart, Elixir ve CI dosyaları.
 
 ## Ne kadar iyi?
 

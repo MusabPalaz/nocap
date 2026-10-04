@@ -59,7 +59,7 @@ try {
     { prompt: true, text: 'claude' },
     { text: '\x1b[2m●\x1b[0m Fixed the billing tests. \x1b[1;32mAll tests pass ✅\x1b[0m' },
     { text: '' },
-    { prompt: true, text: 'npx nocap' },
+    { prompt: true, text: 'npx nocap-ai' },
     ...out.trimEnd().split('\n').filter((l) => !/^\s+→/.test(l)).map((text) => ({ text })),
   ]);
   mkdirSync(join(import.meta.dirname, '../docs'), { recursive: true });

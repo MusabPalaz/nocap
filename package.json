@@ -1,6 +1,6 @@
 {
-  "name": "nocap",
-  "version": "0.1.0",
+  "name": "nocap-ai",
+  "version": "0.1.1",
   "description": "Catch your AI coding agent cheating: skipped tests, deleted asserts, swallowed errors, and \"all tests pass\" claims with no receipts.",
   "author": "Musab Palaz",
   "license": "MIT",

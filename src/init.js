@@ -5,7 +5,7 @@ import { join, dirname, isAbsolute, relative } from 'node:path';
 import { repoRoot, git } from './git.js';
 
 const MARK = 'nocap';
-const RUN = 'if command -v nocap >/dev/null 2>&1; then nocap scan --staged; else npx --yes nocap@latest scan --staged; fi';
+const RUN = 'if command -v nocap >/dev/null 2>&1; then nocap scan --staged; else npx --yes nocap-ai@latest scan --staged; fi';
 
 const AGENTS_SECTION = `
 ## Test integrity (checked by nocap)
@@ -14,7 +14,7 @@ const AGENTS_SECTION = `
 - Never special-case test inputs or check for a test environment in production code.
 - Never make CI or test steps optional (\`|| true\`, \`continue-on-error\`, lowering coverage).
 - Only say tests pass if you ran them after your last change. Quote the summary line of the real output.
-- Before saying a task is done, run \`npx nocap\` and fix everything marked CAP. If something it flags is intentional, tell the user.
+- Before saying a task is done, run \`npx nocap-ai\` and fix everything marked CAP. If something it flags is intentional, tell the user.
 `;
 
 export function init(target, { cwd, force }) {
@@ -79,7 +79,7 @@ function initClaude(root) {
       return say('claude', '.claude/settings.json is not valid JSON; fix it or use the plugin: /plugin marketplace add MusabPalaz/nocap');
     }
   }
-  const command = 'npx --yes nocap hook claude';
+  const command = 'npx --yes nocap-ai hook claude';
   const entry = (matcher) => ({ ...(matcher ? { matcher } : {}), hooks: [{ type: 'command', command, timeout: 30 }] });
   settings.hooks ??= {};
   const add = (event, matcher) => {

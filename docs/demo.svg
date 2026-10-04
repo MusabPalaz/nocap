@@ -6,7 +6,7 @@
   <text x="22" y="65"><tspan fill="#3fb950">❯</tspan> <tspan fill="#e6edf3" font-weight="600">claude</tspan></text>
   <text y="86" xml:space="preserve"><tspan x="22" fill="#7d8590">●</tspan><tspan fill="#e6edf3"> Fixed the billing tests. </tspan><tspan fill="#3fb950" font-weight="700">All tests pass ✅</tspan></text>
   <text y="107" xml:space="preserve"></text>
-  <text x="22" y="128"><tspan fill="#3fb950">❯</tspan> <tspan fill="#e6edf3" font-weight="600">npx nocap</tspan></text>
+  <text x="22" y="128"><tspan fill="#3fb950">❯</tspan> <tspan fill="#e6edf3" font-weight="600">npx nocap-ai</tspan></text>
   <text y="149" xml:space="preserve"><tspan x="22" fill="#e6edf3">🧢 </tspan><tspan fill="#ff7b72" font-weight="700">CAP DETECTED</tspan><tspan fill="#e6edf3">  4 caps  </tspan><tspan fill="#7d8590">3 files, +4 −3</tspan></text>
   <text y="170" xml:space="preserve"></text>
   <rect x="20" y="177" width="45" height="19" rx="3" fill="#da3633"/><text y="191" xml:space="preserve"><tspan x="22" fill="#ffffff" font-weight="700"> CAP </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Test or CI gate weakened</tspan><tspan fill="#e6edf3">  </tspan><tspan fill="#7d8590">.github/workflows/ci.yml:4</tspan><tspan fill="#e6edf3">  </tspan><tspan fill="#7d8590">[ci-weakened]</tspan></text>

@@ -45,10 +45,10 @@ Code review 能抓住一部分，前提是有人逐行读完 600 行的 Agent di
 ### Codex、Cursor、Gemini CLI、OpenCode、Copilot、Amp……（任何 Agent）
 
 ```bash
-npx nocap init
+npx nocap-ai init
 ```
 
-安装一个 git **pre-commit hook**，阻止作弊的提交；并在 **AGENTS.md** 中加入一段规则，让 Agent 在宣布完成前先运行 `npx nocap`。
+安装一个 git **pre-commit hook**，阻止作弊的提交；并在 **AGENTS.md** 中加入一段规则，让 Agent 在宣布完成前先运行 `npx nocap-ai`。
 
 ### CI：GitHub Actions
 
@@ -62,10 +62,12 @@ npx nocap init
 ### 单次运行
 
 ```bash
-npx nocap                        # 工作区 + 未跟踪文件，对比 HEAD
-npx nocap --staged               # 即将提交的内容
-npx nocap --base origin/main     # 当前分支上的全部改动
+npx nocap-ai                     # 工作区 + 未跟踪文件，对比 HEAD
+npx nocap-ai --staged            # 即将提交的内容
+npx nocap-ai --base origin/main  # 当前分支上的全部改动
 ```
+
+npm 包名是 `nocap-ai`；全局安装（`npm i -g nocap-ai`）后命令就是 `nocap`。
 
 ## 能抓住什么
 
@@ -86,7 +88,7 @@ npx nocap --base origin/main     # 当前分支上的全部改动
 | CAP | `no-receipts` / `claim-contradicted` / `empty-test-run` | 没跑测试、测试失败、或一个测试都没执行，却宣称"测试全部通过" |
 | SUS | `expectation-rewritten`、`type-suppression`、`any-cast`、`swallowed-error`、`strictness-lowered`、`stubbed-implementation`…… | 可能是有意为之，但值得看一眼 |
 
-完整列表：`npx nocap rules`。支持 JS/TS、Python、Go、Rust、Java、Kotlin、C#、Ruby、PHP、Swift、Dart、Elixir 以及各类 CI 配置。
+完整列表：`npx nocap-ai rules`。支持 JS/TS、Python、Go、Rust、Java、Kotlin、C#、Ruby、PHP、Swift、Dart、Elixir 以及各类 CI 配置。
 
 ## 效果如何？
 

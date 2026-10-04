@@ -6,7 +6,7 @@
 
 nocap catches coding agents cheating on tests: skipped tests, deleted or weakened asserts, `if (NODE_ENV === 'test')` shortcuts, hardcoded answers, CI made optional, and "all tests pass" with no test run to back it up.
 
-[![npm](https://img.shields.io/npm/v/nocap?color=e5534b&label=npm)](https://www.npmjs.com/package/nocap)
+[![npm](https://img.shields.io/npm/v/nocap-ai?color=e5534b&label=npm)](https://www.npmjs.com/package/nocap-ai)
 [![CI](https://github.com/MusabPalaz/nocap/actions/workflows/ci.yml/badge.svg)](https://github.com/MusabPalaz/nocap/actions/workflows/ci.yml)
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-3fb950)](package.json)
 [![works with](https://img.shields.io/badge/works_with-Claude_Code_·_Codex_·_Cursor_·_any_agent-7c3aed)](#install)
@@ -51,10 +51,10 @@ Claude gets one nudge per problem. If it keeps something on purpose because you 
 ### Codex, Cursor, Gemini CLI, OpenCode, Copilot, Amp… (any agent)
 
 ```bash
-npx nocap init
+npx nocap-ai init
 ```
 
-This installs a git **pre-commit hook** that blocks commits that cheat, and adds a short **AGENTS.md** section that tells your agent the rules and to run `npx nocap` before saying it's done. If the repo already uses Claude Code (`.claude/` or `CLAUDE.md`), it wires up the Claude Code hooks too. Prefer one piece only? `npx nocap init git`, `init agents`, or `init claude`.
+This installs a git **pre-commit hook** that blocks commits that cheat, and adds a short **AGENTS.md** section that tells your agent the rules and to run `npx nocap-ai` before saying it's done. If the repo already uses Claude Code (`.claude/` or `CLAUDE.md`), it wires up the Claude Code hooks too. Prefer one piece only? `npx nocap-ai init git`, `init agents`, or `init claude`.
 
 The nocap [skill](skills/nocap/SKILL.md) follows the Agent Skills format, so you can also drop it into `~/.codex/skills/` or `.agents/skills/`.
 
@@ -72,11 +72,13 @@ Findings show up as annotations on the pull request. CAP fails the check; add `w
 ### One-off
 
 ```bash
-npx nocap                        # working tree + untracked files vs HEAD
-npx nocap --staged               # what you're about to commit
-npx nocap --base origin/main     # everything on this branch
-npx nocap receipts ~/.claude/projects/<project>/<session>.jsonl   # check a session's claims
+npx nocap-ai                     # working tree + untracked files vs HEAD
+npx nocap-ai --staged            # what you're about to commit
+npx nocap-ai --base origin/main  # everything on this branch
+npx nocap-ai receipts ~/.claude/projects/<project>/<session>.jsonl   # check a session's claims
 ```
+
+The npm package is `nocap-ai`; installed globally (`npm i -g nocap-ai`), the command is just `nocap`.
 
 ## What it catches
 
@@ -108,7 +110,7 @@ npx nocap receipts ~/.claude/projects/<project>/<session>.jsonl   # check a sess
 | SUS | `stubbed-implementation` | working code replaced with `NotImplementedError` / `todo!()` / "mock data for now" |
 | SUS | `unverified-fix` | "I've fixed it" after code changes, with no test run |
 
-Languages: JavaScript/TypeScript, Python, Go, Rust, Java, Kotlin, C#, Ruby, PHP, Swift, Dart, Elixir, plus GitHub Actions, GitLab CI, `package.json`, `pyproject.toml`, `tox.ini`, Makefiles. Run `npx nocap rules` for the full list.
+Languages: JavaScript/TypeScript, Python, Go, Rust, Java, Kotlin, C#, Ruby, PHP, Swift, Dart, Elixir, plus GitHub Actions, GitLab CI, `package.json`, `pyproject.toml`, `tox.ini`, Makefiles. Run `npx nocap-ai rules` for the full list.
 
 ## Receipts
 

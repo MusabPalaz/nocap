@@ -18,7 +18,7 @@ You are about to tell the user something works. First prove it.
 Run nocap on the working tree (it compares against HEAD and includes untracked files):
 
 ```bash
-npx --yes nocap
+npx --yes nocap-ai
 ```
 
 If this skill came from the nocap plugin, you can also run the bundled copy: `node <this skill's directory>/../../bin/nocap.js`.
@@ -31,4 +31,4 @@ If this skill came from the nocap plugin, you can also run the bundled copy: `no
 
 End with what you actually ran and what it printed, for example:
 
-> Ran `npm test`: 42 passed, 0 failed. `npx nocap`: no cap.
+> Ran `npm test`: 42 passed, 0 failed. `npx nocap-ai`: no cap.

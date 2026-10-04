@@ -1,6 +1,6 @@
 {
   "name": "nocap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Catches Claude cheating on tests: skipped tests, deleted or weakened asserts, test-only branches in prod code, CI made optional, and 'all tests pass' with no test run to back it up. Blocks the edit or the stop and tells Claude what to fix.",
   "author": {
     "name": "Musab Palaz"
